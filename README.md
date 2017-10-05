@@ -1,0 +1,1 @@
+# JQuery-demo-weak-strong-password
