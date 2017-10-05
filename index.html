@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weak or strong password</title>
+    <style>
+        #main{
+            text-align: center;
+        }
+        
+        #pass{
+            padding: 6px 10px;
+            border: 2px solid #c3c3c3;
+            border-radius: 5px;
+        }
+        
+        #msg{
+            font-family: sans-serif;
+        }
+
+    </style>
+</head>
+
+
+<body>
+  <div id="main">
+     <input type="password" id="pass" placeholder="Enter password here!"> 
+     <h1 id="msg"></h1>
+  </div>
+  
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+      $(document).ready(function(){
+          
+            $("#pass").keyup(function(){
+
+            var password = $("#pass").val();
+
+              if(password.length == 0){
+                  $("#msg").hide(); 
+              }else if(password.length <= 8){
+                  $("#msg").text("Weak").css("color", "red");
+                  $("#msg").show(); 
+              }else{
+                  $("#msg").text("Strong").css("color", "green");
+              }
+
+            });
+    });
+       
+    
+    </script>
+</body>
+</html>
